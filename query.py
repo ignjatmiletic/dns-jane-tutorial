@@ -19,11 +19,13 @@ class DNSQuestion:
 
 
 def header_to_bytes(header):
-    pass
+    fields = dataclasses.astuple(header)
+
+    return struct.pack('!HHHHHH', *fields)
 
 
 def question_to_bytes(question):
-    pass
+    return question.name + struct.pack("!HH", question.type_, question.class_)
 
 
 
