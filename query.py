@@ -65,4 +65,3 @@ sock.sendto(query, ("8.8.8.8", 53))
 
 #dobijamo odgovor, oni su obicno najvise 512 bytova tako da ce 1024 biti i vise nego dovoljno
 response, _ = sock.recvfrom(1024)
-print(response)
