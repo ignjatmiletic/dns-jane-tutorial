@@ -45,7 +45,7 @@ def build_query(domain_name, record_type):
     name = encode_dns_name(domain_name)
     id = random.randint(0, 65535)
     recursion_desired = 1 << 8
-    header = DNSHeader(id = id, num_questions = 1, flags = recursion_desired)
+    header = DNSHeader(id = id, num_questions = 1, flags = 0) #ovo je problem iz nekog razloga
     question = DNSQuestion(name = name, type_= record_type, class_= Class_IN)
     return header_to_bytes(header) + question_to_bytes(question)
     

@@ -1,6 +1,7 @@
 import socket
 from parser import parse_dns_paket, ip_to_string
 from query import build_query
+from resolver import resolve
 
 
 Type_A = 1
@@ -29,3 +30,6 @@ t4 = lookup_domain('www.facebook.com')
 # print(t2)
 # print(t3)
 print(t4)
+print(resolve("twitter.com", Type_A))
+print(resolve("google.com", Type_A))
+print(resolve("facebook.com", Type_A))
